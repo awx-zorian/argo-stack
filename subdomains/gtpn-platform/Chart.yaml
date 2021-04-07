@@ -3,3 +3,5 @@ appVersion: "1.0"
 description: A Helm chart for Kubernetes
 name: app-test-service
 version: 0.1.0
+sources:
+  - https://github.com/awx-zorian/argo-stack/tree/master/subdomains/gtpn-platform
