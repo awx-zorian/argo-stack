@@ -1,5 +1,5 @@
 
-serviceName: app-client-vba-service
+serviceName: appclientvbaservice
 servicePort: 8080
 
 image:

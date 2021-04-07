@@ -1,5 +1,5 @@
 
-serviceName: app-transaction-service
+serviceName: apptransactionservice
 servicePort: 9000
 
 image:

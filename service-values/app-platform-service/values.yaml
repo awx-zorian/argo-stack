@@ -1,5 +1,5 @@
 
-serviceName: app-platform-service
+serviceName: appplatformservice
 servicePort: 30080
 
 image:

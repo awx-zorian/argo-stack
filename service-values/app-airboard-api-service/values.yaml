@@ -1,5 +1,5 @@
 
-serviceName: app-airboard-api-service
+serviceName: appairboardapiservice
 servicePort: 12081
 
 image:

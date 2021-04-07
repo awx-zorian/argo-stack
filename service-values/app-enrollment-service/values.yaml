@@ -1,5 +1,5 @@
 
-serviceName: app-enrollment-service
+serviceName: appenrollmentservice
 servicePort: 8080
 
 image:
