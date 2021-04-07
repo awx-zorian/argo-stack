@@ -1,5 +1,5 @@
 
-serviceName: app-mh-treasury-service
+serviceName: appmhtreasuryservice
 servicePort: 8080
 
 image:

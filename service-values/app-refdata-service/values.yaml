@@ -1,5 +1,5 @@
 
-serviceName: app-refdata-service
+serviceName: apprefdataservice
 servicePort: 9300
 
 image:

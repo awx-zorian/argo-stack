@@ -1,5 +1,5 @@
 
-serviceName: app-moneyhouse-service
+serviceName: appmoneyhouseservice
 servicePort: 8080
 
 image:

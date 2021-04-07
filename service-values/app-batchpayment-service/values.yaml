@@ -1,5 +1,5 @@
 
-serviceName: app-batchpayment-service
+serviceName: appbatchpaymentservice
 servicePort: 20021
 
 image:

@@ -1,5 +1,5 @@
 
-serviceName: app-draftpayment-service
+serviceName: appdraftpaymentservice
 servicePort: 10041
 
 image:

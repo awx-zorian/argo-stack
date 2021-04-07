@@ -1,5 +1,5 @@
 
-serviceName: app-payout-order
+serviceName: apppayoutorder
 servicePort: 8080
 
 image:
