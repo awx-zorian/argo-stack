@@ -13,11 +13,11 @@ spec:
     targetRevision: HEAD
     helm:
       parameters:
-        - name: platform
+        - name: cloudPlatform
           value: gcp
-        - name: region
+        - name: cloudRegion
           value: sg
-        - name: environment
+        - name: cloudEnvironment
           value: dev
   destination:
     server: https://kubernetes.default.svc
