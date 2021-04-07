@@ -12,6 +12,15 @@ spec:
     repoURL: https://github.com/awx-zorian/argo-stack.git
     targetRevision: HEAD
     helm:
+      parameters:
+        - name: subdomainName
+          value: {{ required "subdomain name is missing" .Values.subdomainName }}
+        - name: cloudPlatform
+          value: {{ required "cloud platform is missing" .Values.cloudPlatform }}
+        - name: cloudRegion
+          value: {{ required "region is missing" .Values.cloudRegion }}
+        - name: cloudEnvironment
+          value: {{ required "environment is missing" .Values.cloudEnvironment }}
       valueFiles:
         - ../service-values/app-airboard-api-service/values.yaml
         - ../service-values/app-airboard-api-service/{{ required "environment is missing" .Values.cloudEnvironment }}/values.yaml
