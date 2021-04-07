@@ -16,7 +16,7 @@ spec:
         - values.yaml
         - ../service-values/app-airboard-api-service/values.yaml
         - ../service-values/app-airboard-api-service/{{ required "environment is missing" .Values.cloudEnvironment }}/values.yaml
-        - ../service-values/app-airboard-api-service/{{ required "environment is missing" .Values.cloudEenvironment }}/{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}-values.yaml
+        - ../service-values/app-airboard-api-service/{{ required "environment is missing" .Values.cloudEnvironment }}/{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
