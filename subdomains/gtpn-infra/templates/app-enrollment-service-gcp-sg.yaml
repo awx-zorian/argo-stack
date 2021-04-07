@@ -8,7 +8,7 @@ metadata:
 spec:
   project: dev
   source:
-    path: kubernetes-templates/java-service
+    path: service-templates/java-service
     repoURL: https://github.com/awx-zorian/argo-stack.git
     targetRevision: HEAD
     helm:
