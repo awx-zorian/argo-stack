@@ -8,14 +8,14 @@ metadata:
 spec:
   project: dev
   source:
-    path: service-values
+    path: service-values/app-airboard-api-service
     repoURL: https://github.com/awx-zorian/argo-stack.git
     targetRevision: HEAD
     helm:
       valueFiles:
-        - app-airboard-api-service/values.yaml
-        - app-airboard-api-service/{{ required "environment is missing" .Values.cloudEnvironment }}/values.yaml
-        - app-airboard-api-service/{{ required "environment is missing" .Values.cloudEnvironment }}/{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}-values.yaml
+        - values.yaml
+        - {{ required "environment is missing" .Values.cloudEnvironment }}/values.yaml
+        - {{ required "environment is missing" .Values.cloudEnvironment }}/{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
