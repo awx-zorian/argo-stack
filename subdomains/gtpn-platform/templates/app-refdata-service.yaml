@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-refdata-service
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: dev
+  source:
+    path: kubernetes-templates/java-service
+    repoURL: https://github.com/awx-zorian/argo-stack.git
+    targetRevision: HEAD
+    helm:
+      parameters:
+        - name: subdomainName
+          value: {{ required "subdomain name is missing" .Values.subdomainName }}
+        - name: cloudPlatform
+          value: {{ required "cloud platform is missing" .Values.cloudPlatform }}
+        - name: cloudRegion
+          value: {{ required "region is missing" .Values.cloudRegion }}
+        - name: cloudEnvironment
+          value: {{ required "environment is missing" .Values.cloudEnvironment }}
+      valueFiles:
+        - ../../service-values/app-refdata-service/values.yaml
+        - ../../service-values/app-refdata-service/{{ required "environment is missing" .Values.cloudEnvironment }}/values.yaml
+        - ../../service-values/app-refdata-service/{{ required "environment is missing" .Values.cloudEnvironment }}/{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+    

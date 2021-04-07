@@ -8,10 +8,6 @@ image:
 
 replicaCount: 3
 
-cloudProvider:
-  platform:
-  region:
-
 resources:
   limits:
     cpu: 4000m

@@ -1,8 +1,1 @@
-
-cloudProvider:
-  domain: gtpn
-  platform: gcp
-  region: sg
-  env: dev
-
 secretEnvironment: appbatchpaymentservice-env
