@@ -1,3 +1,4 @@
-replicaCount: 1
-image:
-  tag: release-4.22.0-190999
+java-service:
+  replicaCount: 1
+  image:
+    tag: release-4.22.0-190999

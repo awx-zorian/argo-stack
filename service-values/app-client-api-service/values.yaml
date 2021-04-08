@@ -1,21 +1,21 @@
+java-service:
+  serviceName: appclientapiservice
+  servicePort: 20080
 
-serviceName: appclientapiservice
-servicePort: 20080
+  image:
+    repository: asia.gcr.io/airwallex/client-api
+    tag:
 
-image:
-  repository: asia.gcr.io/airwallex/client-api
-  tag:
+  replicaCount: 3
 
-replicaCount: 3
+  resources:
+    limits:
+      cpu: 2500m
+      memory: 2Gi
+    requests:
+      cpu: 500m
+      memory: 1Gi
 
-resources:
-  limits:
-    cpu: 2500m
-    memory: 2Gi
-  requests:
-    cpu: 500m
-    memory: 1Gi
+  environment:
 
-environment:
-
-secretEnvironment:
+  secretEnvironment:

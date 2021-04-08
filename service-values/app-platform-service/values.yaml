@@ -1,21 +1,21 @@
+java-service:
+  serviceName: appplatformservice
+  servicePort: 30080
 
-serviceName: appplatformservice
-servicePort: 30080
+  image:
+    repository: asia.gcr.io/airwallex/platform-services
+    tag:
 
-image:
-  repository: asia.gcr.io/airwallex/platform-services
-  tag:
+  replicaCount: 3
 
-replicaCount: 3
+  resources:
+    limits:
+      cpu: 4000m
+      memory: 4Gi
+    requests:
+      cpu: 4000m
+      memory: 4Gi
 
-resources:
-  limits:
-    cpu: 4000m
-    memory: 4Gi
-  requests:
-    cpu: 4000m
-    memory: 4Gi
+  environment:
 
-environment:
-
-secretEnvironment:
+  secretEnvironment:

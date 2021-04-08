@@ -1,1 +1,2 @@
-secretEnvironment: appplatformservice-env
+java-service:
+  secretEnvironment: appplatformservice-env

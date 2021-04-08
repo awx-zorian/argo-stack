@@ -8,23 +8,24 @@ metadata:
 spec:
   project: dev
   source:
-    path: service-templates/java-service
+    path: service-values/app-draftpayment-service
     repoURL: https://github.com/awx-zorian/argo-stack.git
     targetRevision: HEAD
     helm:
+      version: v3
       parameters:
-        - name: subdomainName
+        - name: java-service.subdomainName
           value: {{ required "subdomain name is missing" .Values.subdomainName }}
-        - name: cloudPlatform
+        - name: java-service.cloudPlatform
           value: {{ required "cloud platform is missing" .Values.cloudPlatform }}
-        - name: cloudRegion
+        - name: java-service.cloudRegion
           value: {{ required "region is missing" .Values.cloudRegion }}
-        - name: cloudEnvironment
+        - name: java-service.cloudEnvironment
           value: {{ required "environment is missing" .Values.cloudEnvironment }}
       valueFiles:
-        - ../../service-values/app-draftpayment-service/values.yaml
-        - ../../service-values/app-draftpayment-service/{{ required "environment is missing" .Values.cloudEnvironment }}/values.yaml
-        - ../../service-values/app-draftpayment-service/{{ required "environment is missing" .Values.cloudEnvironment }}/{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}-values.yaml
+        - values.yaml
+        - {{ required "environment is missing" .Values.cloudEnvironment }}/values.yaml
+        - {{ required "environment is missing" .Values.cloudEnvironment }}/{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

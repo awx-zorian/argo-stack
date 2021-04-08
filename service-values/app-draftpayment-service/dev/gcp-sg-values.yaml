@@ -1,1 +1,2 @@
-secretEnvironment: appdraftpaymentservice-env
+java-service:
+  secretEnvironment: appdraftpaymentservice-env

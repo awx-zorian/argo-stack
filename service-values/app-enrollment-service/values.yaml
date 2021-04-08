@@ -1,21 +1,21 @@
+java-service:
+  serviceName: appenrollmentservice
+  servicePort: 8080
 
-serviceName: appenrollmentservice
-servicePort: 8080
+  image:
+    repository: asia.gcr.io/airwallex/app-enrollment-service
+    tag:
 
-image:
-  repository: asia.gcr.io/airwallex/app-enrollment-service
-  tag:
+  replicaCount: 3
 
-replicaCount: 3
+  resources:
+    limits:
+      cpu: 2500m
+      memory: 2Gi
+    requests:
+      cpu: 500m
+      memory: 1Gi
 
-resources:
-  limits:
-    cpu: 2500m
-    memory: 2Gi
-  requests:
-    cpu: 500m
-    memory: 1Gi
+  environment:
 
-environment:
-
-secretEnvironment:
+  secretEnvironment:

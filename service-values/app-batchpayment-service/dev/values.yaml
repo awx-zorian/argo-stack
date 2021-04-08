@@ -1,3 +1,4 @@
-replicaCount: 1
-image:
-  tag: feature-remove_dev_config-174524
+java-service:
+  replicaCount: 1
+  image:
+    tag: feature-remove_dev_config-174524

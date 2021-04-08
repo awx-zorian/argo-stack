@@ -1,1 +1,2 @@
-secretEnvironment: appwebappapiservice-env
+java-service:
+  secretEnvironment: appwebappapiservice-env

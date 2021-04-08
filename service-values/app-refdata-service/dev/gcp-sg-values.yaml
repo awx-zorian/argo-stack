@@ -1,1 +1,2 @@
-secretEnvironment: apprefdataservice-env
+java-service:
+  secretEnvironment: apprefdataservice-env

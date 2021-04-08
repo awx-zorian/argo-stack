@@ -1,3 +1,4 @@
-replicaCount: 1
-image:
-  tag: develop-192090
+java-service:
+  replicaCount: 1
+  image:
+    tag: develop-192090

@@ -1,1 +1,2 @@
-secretEnvironment: appbatchpaymentservice-env
+java-service:
+  secretEnvironment: appbatchpaymentservice-env

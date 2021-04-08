@@ -1,1 +1,2 @@
-secretEnvironment: apptransactionservice-env
+java-service:
+  secretEnvironment: apptransactionservice-env

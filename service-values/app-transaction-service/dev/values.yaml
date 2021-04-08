@@ -1,3 +1,4 @@
-replicaCount: 1
-image:
-  tag: feature-update_http_client_config-190964
+java-service:
+  replicaCount: 1
+  image:
+    tag: feature-update_http_client_config-190964

@@ -1,1 +1,2 @@
-secretEnvironment: appclientapiservice-env
+java-service:
+  secretEnvironment: appclientapiservice-env

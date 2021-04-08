@@ -1,3 +1,4 @@
-replicaCount: 1
-image:
-  tag: master-180907
+java-service:
+  replicaCount: 1
+  image:
+    tag: master-180907
