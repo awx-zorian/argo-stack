@@ -26,7 +26,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev
+  name: gtpn-infra
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -34,8 +34,42 @@ spec:
   project: dev
   source:
     repoURL: https://github.com/awx-zorian/argo-stack.git
+    path: subdomain-values/gtpn-infra
     targetRevision: HEAD
-    path: dev
+    helm:
+      version: v3
+      valueFiles:
+        - values.yaml
+        - dev/values.yaml
+        - dev/gcp-sg-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gtpn-platform
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: dev
+  source:
+    repoURL: https://github.com/awx-zorian/argo-stack.git
+    path: subdomain-values/gtpn-platform
+    targetRevision: HEAD
+    helm:
+      version: v3
+      valueFiles:
+        - values.yaml
+        - dev/values.yaml
+        - dev/gcp-sg-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev

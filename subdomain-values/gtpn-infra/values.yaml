@@ -1,0 +1,6 @@
+gtpn:
+  domainName: gtpn
+  subdomainName: gtpn-infra
+  cloudPlatform:
+  cloudRegion:
+  cloudEnvironment:

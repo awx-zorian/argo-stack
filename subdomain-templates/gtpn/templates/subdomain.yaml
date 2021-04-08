@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ required "sub domain name is missing" .Values.subdomainName }}
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: dev
+  source:
+    path: subdomain-services/{{ required "sub domain name is missing" .Values.subdomainName }}
+    repoURL: https://github.com/awx-zorian/argo-stack.git
+    targetRevision: HEAD
+    helm:
+      parameters:
+        - name: domainName
+          value: {{ required "domain name is missing" .Values.domainName }}
+        - name: cloudPlatform
+          value: {{ required "cloud platform name is missing" .Values.cloudPlatform }}
+        - name: cloudRegion
+          value: {{ required "cloud region name is missing" .Values.cloudRegion }}
+        - name: cloudEnvironment
+          value: {{ required "cloud environment name is missing" .Values.cloudEnvironment }}
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+    
