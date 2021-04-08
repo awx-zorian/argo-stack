@@ -1,5 +1,6 @@
-apiVersion: v1
+apiVersion: v3
 appVersion: "1.0"
+type: application
 description: A Helm chart for Kubernetes
-name: app-test-service
+name: java-service
 version: 1.0.0
