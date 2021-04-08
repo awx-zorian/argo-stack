@@ -13,8 +13,8 @@ spec:
     targetRevision: HEAD
     helm:
       parameters:
-        - name: subdomainName
-          value: gtpn-infra
+        - name: domainName
+          value: gtpn
         - name: cloudPlatform
           value: gcp
         - name: cloudRegion

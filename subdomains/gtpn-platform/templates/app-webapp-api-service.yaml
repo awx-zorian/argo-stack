@@ -14,8 +14,8 @@ spec:
     helm:
       version: v3
       parameters:
-        - name: java-service.subdomainName
-          value: {{ required "subdomain name is missing" .Values.subdomainName }}
+        - name: java-service.domainName
+          value: {{ required "domain name is missing" .Values.domainName }}
         - name: java-service.cloudPlatform
           value: {{ required "cloud platform is missing" .Values.cloudPlatform }}
         - name: java-service.cloudRegion

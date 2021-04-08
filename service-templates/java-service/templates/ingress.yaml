@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: {{ required "service name is missing" .Values.serviceName }}.{{ required "domain is missing" .Values.subdomainName }}.{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}.{{ required "env is missing" .Values.cloudEnvironment }}.awx.im
+  - host: {{ required "service name is missing" .Values.serviceName }}.{{ required "domain is missing" .Values.domainName }}.{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}.{{ required "env is missing" .Values.cloudEnvironment }}.awx.im
     http:
       paths:
       - backend:
@@ -17,5 +17,5 @@ spec:
         path: /
   tls:
   - hosts:
-    - "*.{{ required "domain is missing" .Values.subdomainName }}.{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}.{{ required "env is missing" .Values.cloudEnvironment }}.awx.im"
-    secretName: wildcard-{{ required "domain is missing" .Values.subdomainName }}-{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}-{{required "env is missing" .Values.cloudEnvironment}}-awx-im-tls
+    - "*.{{ required "domain is missing" .Values.domainName }}.{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}.{{ required "env is missing" .Values.cloudEnvironment }}.awx.im"
+    secretName: wildcard-{{ required "domain is missing" .Values.domainName }}-{{ required "cloud platform is missing" .Values.cloudPlatform }}-{{ required "region is missing" .Values.cloudRegion }}-{{required "env is missing" .Values.cloudEnvironment}}-awx-im-tls
