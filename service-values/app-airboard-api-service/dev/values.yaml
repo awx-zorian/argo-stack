@@ -1,3 +1,4 @@
-replicaCount: 1
-image:
-  tag: feature-change_dev_config_for_dev_env-190779
+java-service:
+  replicaCount: 1
+  image:
+    tag: feature-change_dev_config_for_dev_env-190779

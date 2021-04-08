@@ -1,1 +1,2 @@
-secretEnvironment: appairboardapiservice-env
+java-service:
+  secretEnvironment: appairboardapiservice-env
