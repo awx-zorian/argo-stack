@@ -33,15 +33,19 @@ metadata:
 spec:
   project: dev
   source:
+    path: subdomain-services/gtpn-infra
     repoURL: https://github.com/awx-zorian/argo-stack.git
-    path: subdomain-values/gtpn-infra
     targetRevision: HEAD
     helm:
-      version: v3
-      valueFiles:
-        - values.yaml
-        - dev/values.yaml
-        - dev/gcp-sg-values.yaml
+      parameters:
+        - name: domainName
+          value: gptpn
+        - name: cloudPlatform
+          value: gcp
+        - name: cloudRegion
+          value: sg
+        - name: cloudEnvironment
+          value: dev
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -49,6 +53,8 @@ spec:
     automated:
       selfHeal: true
       prune: true
+    syncOptions:
+      - CreateNamespace=true
 
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -61,15 +67,19 @@ metadata:
 spec:
   project: dev
   source:
+    path: subdomain-services/gtpn-platform
     repoURL: https://github.com/awx-zorian/argo-stack.git
-    path: subdomain-values/gtpn-platform
     targetRevision: HEAD
     helm:
-      version: v3
-      valueFiles:
-        - values.yaml
-        - dev/values.yaml
-        - dev/gcp-sg-values.yaml
+      parameters:
+        - name: domainName
+          value: gptpn
+        - name: cloudPlatform
+          value: gcp
+        - name: cloudRegion
+          value: sg
+        - name: cloudEnvironment
+          value: dev
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
@@ -77,3 +87,5 @@ spec:
     automated:
       selfHeal: true
       prune: true
+    syncOptions:
+      - CreateNamespace=true
